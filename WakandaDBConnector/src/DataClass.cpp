@@ -5,3 +5,14 @@ DataClass::DataClass(string const& inName, string const & inURI, string const& i
 {
 	cout << " --------- Constructing ---->> " << m_name << "  DataClass -------" << endl;
 }
+
+string DataClass::getUri()
+{
+	return m_uri;
+}
+
+string DataClass::getDataURI()
+{
+	return m_dataURI;
+}
+

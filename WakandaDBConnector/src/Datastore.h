@@ -16,13 +16,13 @@ class DataStore
 		std::string m_uri;
 		std::string m_url;
 
-		std::map < std::string, DataClass* > m_dataclasses;
+		
 		
 		std::string m_json;
 		long m_port;
 
 	public:
-
+		std::map < std::string, DataClass* > m_dataclasses;
 	/*
 		inAddress 127.0.0.1
 		port	8000

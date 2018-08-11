@@ -11,8 +11,9 @@ class DataClass  {
 	public:
 		
 		DataClass(string const& inName,string const & inURI,string const& inDataUri);
-		//string getUri();
-		//string getDatURI();
+		string getUri();
+		string getDataURI();
+		string getName() { return m_name; }
 
 
 };

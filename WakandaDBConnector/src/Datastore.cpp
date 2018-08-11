@@ -34,14 +34,14 @@ DataStore::DataStore(const std::string & inDomain, long inPort):
 	for (rapidjson::Value::ConstValueIterator itr = dataClasses.Begin(); itr != dataClasses.End(); ++itr) {
 		
 		
-		cout << " ----------Parsing the dataStore Scope" << endl<<endl;
+		//cout << " ----------Parsing the dataStore Scope" << endl<<endl;
 		const rapidjson::Value& dataClass = *itr;
 		
 		assert(dataClass.IsObject()); // each attribute is an object
 		
 	
 		//Initialisation
-		string arr[3];
+		string  arr [3];
 		string name="";
 		int k = 0;
 
@@ -50,27 +50,23 @@ DataStore::DataStore(const std::string & inDomain, long inPort):
 			//std::cout << itr2->name.GetString() << " : " << itr2->value.GetString() << std::endl; // Printing key, value 
 
 			// Saving the name of the DataClass 
-			name=dataClass.MemberBegin()->name.GetString();
+			name=dataClass.MemberBegin()->value.GetString();
 
 			//Saving values 
 			arr[k] = itr2->value.GetString();
 			k++;
 
-			std::cout << "------  End of Data Class Scope -------------------" << std::endl<<endl;
+			//std::cout << "------  End of Data Class Scope -------------------" << std::endl<<endl;
 		}
+		//cout << name << "         <---- name  " << endl;
+
+		m_dataclasses.insert(std::pair<std::string, DataClass* >(name, new DataClass(arr[0],arr[1],arr[2])));
 		
-		m_dataclasses.insert(std::pair<std::string, DataClass* >("", new DataClass(arr[0],arr[1],arr[2])));
-
-		//for (int i =0; i <= 2; i++)
-
-		//	cout << arr[i]<<"            ----->          element array"<<endl;
-
-		//cout << endl<<"array done ---------------------------------------------------------------here" << endl<<endl;
-		////DataClass ds(arr[0], arr[1], arr[2]);
-		//
 	}
-
 	
+	//cout << m_dataclasses.size() << endl;
 }
+
+
 
 // Methods Implementation 
