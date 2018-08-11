@@ -39,7 +39,7 @@ class DataStore
 		}
 		
 		// Methods manipuling attributes 
-		string getUri() { return m_uri; }
+		string getUrl() { return m_url; }
 		void setJson(string const &inJason) { m_json = inJason; }
 		string getJson() { return m_json; }
 };

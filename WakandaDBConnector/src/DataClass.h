@@ -10,9 +10,9 @@ class DataClass  {
 
 	public:
 		
-		DataClass(string const & inURI);
-		string getUri();
-		string getDatURI();
+		DataClass(string const& inName,string const & inURI,string const& inDataUri);
+		//string getUri();
+		//string getDatURI();
 
 
 };
